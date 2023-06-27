@@ -6,6 +6,10 @@ Tests are running with Jest, so I've followed instructions from [Jest oficial do
 
 Test files are the same as defined in each exercise but applying minor changes, like update `xit` to `it` to avoid skipping some tests (which are actually run in remote env)
 
+## Requirements
+
+- [yarn package manager](https://yarnpkg.com/cli/install)
+
 ## How to operate
 
 ### Install dependencies
@@ -24,5 +28,9 @@ yarn test [./exercise-folder]
 
 - [Hello World](./hello-world/) for [hello-world](https://exercism.org/tracks/typescript/exercises/hello-world)
 - [Two Fer](./two-fer/) for [two-fer](https://exercism.org/tracks/typescript/exercises/two-fer)
-- [Resistor Color Duo](./resistor-color-duo/) for [resistor-color-duo](https://exercism.org/tracks/typescript/exercises/resistor-color-duo
-)
+- [Resistor Color Duo](./resistor-color-duo/) for [resistor-color-duo](https://exercism.org/tracks/typescript/exercises/resistor-color-duo)
+- [Resistor Color Trio](./resistor-color-trio) for [resistor-color-trio](https://exercism.org/tracks/typescript/exercises/resistor-color-trio)
+- [Leap](./leap) for [leap](https://exercism.org/tracks/typescript/exercises/leap)
+- [Resistor Color](./resistor-color) for [resistor-color](https://exercism.org/tracks/typescript/exercises/resistor-color)
+- [RNA Transcription](./rna-transcription) for [rna-transcription](https://exercism.org/tracks/typescript/exercises/rna-transcription)
+- [Space Age](./space-age) for [space-age](https://exercism.org/tracks/typescript/exercises/space-age)
