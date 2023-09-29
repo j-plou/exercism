@@ -11,14 +11,14 @@ export class Robot {
   }
 
   public resetName(): void {
-    let newName: string = this.generateNewName();
+    let newName: string;
 
-    if (Robot._usedNames.find((x) => x == newName) === undefined) {
-      Robot._usedNames.push(newName);
-      this._name = newName;
-    } else {
-      this.resetName();
-    }
+    do {
+      newName = this.generateNewName();
+    } while (Robot._usedNames.find((x) => x == newName) != undefined);
+
+    Robot._usedNames.push(newName);
+    this._name = newName;
   }
 
   private generateNewName(): string {
@@ -46,7 +46,10 @@ export class Generator {
     let randomString = "";
     for (var i = 0; i < len; i++) {
       let randomCharPosition = Math.floor(Math.random() * charSet.length);
-      randomString += charSet.substring(randomCharPosition, randomCharPosition + 1);
+      randomString += charSet.substring(
+        randomCharPosition,
+        randomCharPosition + 1
+      );
     }
     return randomString;
   }
