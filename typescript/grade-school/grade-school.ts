@@ -22,19 +22,13 @@ export class GradeSchool {
 
   private removeAlreadyRegisteredStudent(newStudent: string) {
     for (let grade in this.rosterData) {
-      for (let registeredStudentIndex in this.rosterData[grade]) {
-        let registeredStudent = this.rosterData[grade][registeredStudentIndex];
-        if (registeredStudent == newStudent) {
-          this.rosterData[grade].splice(Number(registeredStudentIndex), 1);
-        }
-      }
+      this.rosterData[grade] = this.rosterData[grade].filter(
+        (student) => student !== newStudent
+      );
     }
   }
 
   grade(grade: number) {
-    if (!this.rosterData[grade]) {
-      return [];
-    }
-    return JSON.parse(JSON.stringify(this.rosterData[grade]));
+    return this.rosterData[grade] ? [...this.rosterData[grade]] : [];
   }
 }
