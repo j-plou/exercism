@@ -1,58 +1,26 @@
+const MINUTES_IN_DAY = 24 * 60;
+
 export class Clock {
-  private _hour: number = 0;
-  private _minute: number = 0;
+  private timeInMinutes: number = 0;
 
-  constructor(hour: number, minute?: number) {
-    this._hour = 24 + (hour % 24);
-
-    if (minute) {
-      this._hour += 24 + (Math.floor(minute / 60) % 24);
-      this._minute = 60 + (minute % 60);
-    }
-
-    this._hour = this._hour % 24;
-    this._minute = this._minute % 60;
+  constructor(hour = 0, minute = 0) {
+    const newTime = (hour * 60 + minute) % MINUTES_IN_DAY;
+    this.timeInMinutes = newTime < 0 ? newTime + MINUTES_IN_DAY : newTime;
   }
 
-  public toString(): unknown {
-    return (
-      String(this._hour).padStart(2, "0") +
-      ":" +
-      String(this._minute).padStart(2, "0")
-    );
+  public toString(): string {
+    return `${String(Math.trunc(this.timeInMinutes / 60)).padStart(2, "0")}:${String(this.timeInMinutes % 60).padStart(2, "0")}`;
   }
 
   public plus(minutes: number): Clock {
-    this._minute += minutes;
-
-    if (this._minute > 60 && minutes / 60 < 1) {
-      this._hour += 1;
-    } else {
-      this._hour += Math.round(minutes / 60);
-    }
-
-    this._hour = this._hour % 24;
-    this._minute = this._minute % 60;
-
-    return this;
+    return new Clock(0, this.timeInMinutes + minutes);
   }
 
   public minus(minutes: number): Clock {
-    this._hour = 24 - Math.floor(minutes / 60) + this._hour;
-
-    if (minutes > this._minute && minutes % 60 != 0) {
-      this._hour -= 1;
-    }
-
-    this._minute = 60 - (minutes % 60) + this._minute;
-
-    this._hour = this._hour % 24;
-    this._minute = this._minute % 60;
-
-    return this;
+    return new Clock(0, this.timeInMinutes - minutes);
   }
 
-  public equals(other: Clock): unknown {
-    return this.toString() == other.toString();
+  public equals(other: Clock): boolean {
+    return other.timeInMinutes === this.timeInMinutes;
   }
 }
