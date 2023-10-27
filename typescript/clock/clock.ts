@@ -9,7 +9,7 @@ export class Clock {
   }
 
   public toString(): string {
-    return `${String(Math.trunc(this.timeInMinutes / 60)).padStart(2, "0")}:${String(this.timeInMinutes % 60).padStart(2, "0")}`;
+    return `${String(Math.floor(this.timeInMinutes / 60)).padStart(2, "0")}:${String(this.timeInMinutes % 60).padStart(2, "0")}`;
   }
 
   public plus(minutes: number): Clock {

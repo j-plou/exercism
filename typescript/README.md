@@ -42,3 +42,4 @@ yarn test [./exercise-folder]
 - [Robot Name](./robot-name/) for [name](https://exercism.org/tracks/typescript/exercises/robot-name)
 - [Grade School](./grade-school/) for [school](https://exercism.org/tracks/typescript/exercises/grade-school)
 - [Clock](./clock/) for [clock](https://exercism.org/tracks/typescript/exercises/clock)
+- [Secret Handshake](./secret-handshake) for [secret-handshake](https://exercism.org/tracks/typescript/exercises/secret-handshake)
