@@ -44,3 +44,4 @@ yarn test [./exercise-folder]
 - [Clock](./clock/) for [clock](https://exercism.org/tracks/typescript/exercises/clock)
 - [Secret Handshake](./secret-handshake) for [secret-handshake](https://exercism.org/tracks/typescript/exercises/secret-handshake)
 - [Binary Search](./binary-search) for [binary-search](https://exercism.org/tracks/typescript/exercises/binary-search)
+- [Linked List](./linked-list) for [linked-list](https://exercism.org/tracks/typescript/exercises/linked-list)
